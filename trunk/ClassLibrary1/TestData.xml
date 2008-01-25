@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<account>
+  <budgets>
+    <budget name="excess" amount="0" period="n" />
+    <budget name="food" amount="25" period="w" />
+    <budget name="mortgage" amount="705" period="m" />
+  </budgets>
+  <accounts>
+    <AccountType name="CreditCard" />
+    <AccountType name="Current" />
+  </accounts>
+  <transaction date="1/1/2007" id="0" description="Spent at Sainsburys" AccountType="CreditCard" Balanced="True">
+    <amount total="1250" budget="food">
+      <category title="food" />
+      <category title="crisps" />
+    </amount>
+    <amount total="1325" budget="excess">
+      <category title="music" />
+    </amount>
+  </transaction>
+  <transaction date="2/1/2007" id="1" description="Spent at Tesco" AccountType="Current" Balanced="False">
+    <amount total="1023" budget="food">
+      <category title="junk" />
+    </amount>
+  </transaction>
+</account>
