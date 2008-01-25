@@ -1,7 +1,0 @@
-C:\Documents and Settings\jon\My Documents\Visual Studio 2008\Projects\AccountManager\ClassLibrary1\obj\Release\ResolveAssemblyReference.cache
-C:\Documents and Settings\jon\My Documents\Visual Studio 2008\Projects\AccountManager\ClassLibrary1\bin\Release\DataAccess.dll
-C:\Documents and Settings\jon\My Documents\Visual Studio 2008\Projects\AccountManager\ClassLibrary1\bin\Release\DataAccess.pdb
-C:\Documents and Settings\jon\My Documents\Visual Studio 2008\Projects\AccountManager\ClassLibrary1\obj\Release\DataAccess.dll
-C:\Documents and Settings\jon\My Documents\Visual Studio 2008\Projects\AccountManager\ClassLibrary1\obj\Release\DataAccess.pdb
-C:\Documents and Settings\jon\My Documents\Visual Studio 2008\Projects\AccountManager\ClassLibrary1\bin\Release\nunit.framework.dll
-C:\Documents and Settings\jon\My Documents\Visual Studio 2008\Projects\AccountManager\ClassLibrary1\bin\Release\nunit.framework.xml
