@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DataAccess;
+using MathFunctions;
 
 namespace AccountManager
 {
@@ -209,8 +210,23 @@ namespace AccountManager
 
         private void _transaction_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0 && e.RowIndex  >= 0)
             {
+                //only process this if it isn't a formula
+                if (_transaction.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null && 
+                    _transaction.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()[0] == '=')
+                {
+                    return;
+                }
+                try
+                {
+                    float.Parse(_transaction.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Please enter a numeric value only");
+                    return;
+                }
                 //just left the amount column
                 //update the highest row with the correct amount
                 int iValue = 0;
@@ -323,6 +339,22 @@ namespace AccountManager
             _cbAvailableCategories.Items.AddRange(comboItems.ToArray());
             //take it out of the list of assigned categories
             _lvAssignedCategories.Items.Remove(item);
+        }
+
+        private void _transaction_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                if (_transaction.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null &&
+                    _transaction.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()[0] == '=')
+                {
+                    //if this is a formula then let's process it
+                    MathParser parser = new MathParser();
+                    string tmp = _transaction.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    decimal value = parser.Calculate(tmp.Substring(1, tmp.Length - 1));
+                    _transaction.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = value;
+                }
+            }
         }
     }
 }

@@ -109,6 +109,7 @@
             this._transaction.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this._transaction_CellValueChanged);
             this._transaction.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this._transaction_RowEnter);
             this._transaction.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this._transaction_RowsAdded);
+            this._transaction.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this._transaction_CellEndEdit);
             // 
             // Amount
             // 
