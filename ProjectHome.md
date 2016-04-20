@@ -1,0 +1,1 @@
+A simple application to help manage multiple bank accounts. Uses an xml backend to allow for easy reporting.
